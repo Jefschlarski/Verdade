@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class BurnRecipes extends StatefulWidget {
+  const BurnRecipes({super.key});
+
   @override
   _BurnRecipesState createState() => _BurnRecipesState();
 }
 
 class _BurnRecipesState extends State<BurnRecipes> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   int _currentPage = 0;
 
   @override
@@ -27,7 +29,7 @@ class _BurnRecipesState extends State<BurnRecipes> {
               },
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.85,
                     height: MediaQuery.of(context).size.height * 0.22,
@@ -40,7 +42,7 @@ class _BurnRecipesState extends State<BurnRecipes> {
                     child: Center(
                       child: Text(
                         'Item ${index + 1}',
-                        style: TextStyle(fontSize: 24, color: Colors.white),
+                        style: const TextStyle(fontSize: 24, color: Colors.white),
                       ),
                     ),
                   ),
@@ -64,10 +66,10 @@ class _BurnRecipesState extends State<BurnRecipes> {
         }
 
         return Container(
-          margin: EdgeInsets.all(8),
+          margin: const EdgeInsets.all(8),
           width: 10 * scaleFactor,
           height: 10 * scaleFactor,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.grey,
           ),

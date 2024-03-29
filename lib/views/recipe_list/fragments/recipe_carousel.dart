@@ -14,22 +14,24 @@ class RecipeCarousel extends StatelessWidget {
   final List<Recipe> recipes = [
     Recipe(
       title: 'Receita 1',
-      image: AssetImage('assets/recipe1.jpg'),
+      image: const AssetImage('assets/recipe1.jpg'),
     ),
     Recipe(
       title: 'Receita 2',
-      image: AssetImage('assets/recipe2.jpg'),
+      image: const AssetImage('assets/recipe2.jpg'),
     ),
     Recipe(
       title: 'Receita 3',
-      image: AssetImage('assets/recipe2.jpg'),
+      image: const AssetImage('assets/recipe2.jpg'),
     ),
     Recipe(
       title: 'Receita 4',
-      image: AssetImage('assets/recipe2.jpg'),
+      image: const AssetImage('assets/recipe2.jpg'),
     ),
     // Adicione mais receitas conforme necessário
   ];
+
+  RecipeCarousel({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +61,7 @@ class CustomListItem extends StatelessWidget {
   final VoidCallback? onTitlePressed;
 
   const CustomListItem({
+    super.key,
     required this.image,
     required this.title,
     this.onTitlePressed,
@@ -70,7 +73,7 @@ class CustomListItem extends StatelessWidget {
       onTap: onTitlePressed,
       child: Container(
         width: MediaQuery.of(context).size.width * 0.4,
-        margin: EdgeInsets.symmetric(horizontal: 8.0),
+        margin: const EdgeInsets.symmetric(horizontal: 8.0),
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.circular(16.0),
@@ -81,7 +84,7 @@ class CustomListItem extends StatelessWidget {
               top: 8,
               left: 8,
               child: IconButton(
-                icon: Icon(Icons.favorite),
+                icon: const Icon(Icons.favorite),
                 onPressed: () {
                   // Ação ao clicar no botão de curtir
                   print('Curtiu a receita: $title');
@@ -94,8 +97,8 @@ class CustomListItem extends StatelessWidget {
               left: 16.0,
               child: Text(
                 title,
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 24, 24, 24),
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 24, 24, 24),
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                 ),

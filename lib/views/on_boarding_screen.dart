@@ -4,6 +4,8 @@ import 'package:verdade/views/home_screen.dart';
 import '../styles/styles.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
@@ -13,17 +15,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int _currentPage = 0;
 
   final List<Widget> onboardingPages = [
-    OnboardingPage(
+    const OnboardingPage(
       title: 'Bem-vindo a Verdade',
       description:
           'Descubra um novo mundo de receitas veganas e vegetarianas naturais.',
     ),
-    OnboardingPage(
+    const OnboardingPage(
       title: 'Explore Receitas Deliciosas',
       description:
           'Encontre receitas saudáveis e deliciosas para cada ocasião.',
     ),
-    OnboardingPage(
+    const OnboardingPage(
       title: 'Comece a Cozinhar Agora',
       description:
           'Mergulhe na culinária verde de verdade e descubra incríveis sabores.',
@@ -53,7 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Align(
             alignment: AlignmentDirectional.bottomEnd,
             child: Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -71,7 +73,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         _navigateToNextScreen();
                       }
                       _pageController.nextPage(
-                        duration: Duration(milliseconds: 800),
+                        duration: const Duration(milliseconds: 800),
                         curve: Curves.easeInOut,
                       );
                     },
@@ -111,16 +113,16 @@ class Indicator extends StatelessWidget {
   final int index;
   final int currentPage;
 
-  Indicator({required this.index, required this.currentPage});
+  const Indicator({super.key, required this.index, required this.currentPage});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: index == currentPage ? 24 : 12,
       height: 12,
-      margin: EdgeInsets.symmetric(horizontal: 1.5),
+      margin: const EdgeInsets.symmetric(horizontal: 1.5),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
         color:
             index == currentPage ? onboardIndicatorSelectedColor : Colors.white,
       ),
@@ -132,12 +134,13 @@ class OnboardingPage extends StatelessWidget {
   final String title;
   final String description;
 
-  OnboardingPage({required this.title, required this.description});
+  const OnboardingPage(
+      {super.key, required this.title, required this.description});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(25),
+      padding: const EdgeInsets.all(25),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
